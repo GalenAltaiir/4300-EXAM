@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Form </title>
+</head>
+
+<body>
+<div id="">
+<form name="myForm" action="homepage.html"  onsubmit="return validate()">
+
+<table>
+
+<tr>
+    <td colspan="2" align="center">
+        <h3>Registration Form</h3>
+    </td>
+</tr>
+
+<tr>
+    <td colspan="2">
+        
+    </td>
+</tr>
+
+<tr>
+    <td> Full Name </td>
+    <td>
+        <input type="text" size="30" id="fname">
+        <span id ="error_fname" class="error"></span>
+    </td> 
+</tr>
+<tr>
+    <td> Password </td>
+    <td>
+        <input type="password" size="30" id="pw">
+        <span id ="error_pass" class="error"></span>
+    </td> 
+</tr>
+<tr>
+    <td>Email </td>
+    <td>
+        <input type="text" size="30" id="email">
+        <span id ="error_email" class="error"></span>
+    </td>
+</tr>
+
+<tr>
+    <td>Phone </td>
+    <td>
+        <input type="text" size="30" id="phone">
+        <span id ="error_phone" class="error"></span>
+    </td>
+</tr>
+
+<tr>
+    <td>&nbsp;</td> 
+    <td>
+        <input type="submit" value="Register">
+    </td>
+</tr>
+
+</table>
+
+</form>
+
+</div>
+<script type="text/javascript">
+ /* your code goes here */
+
+    let errName = document.getElementById("error_fname")
+    let errPass = document.getElementById("error_pass")
+    let errMail = document.getElementById("error_email")
+    let errPhone = document.getElementById("error_phone")
+
+    let inName = document.getElementById("fname")
+    let inPass = document.getElementById("pw")
+    let inMail = document.getElementById("email")
+    let inPhone = document.getElementById("phone")
+
+    function containsSpecialChars(str) {
+        const specialChars = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+        return specialChars.test(str);
+    }
+
+    function passCheck(str){
+        const lowerCase = /[a-z]/
+        return lowerCase.test(str)
+    }
+
+    function emailChecks(str) {
+        const emailReg = /^[a-zA-Z0-9]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/gim;
+
+        return emailReg.test(str);
+    }
+
+    
+    function phonecheck(str) {
+        const phoneReg = /[0-9]/gim;
+
+        return phoneReg.test(str);
+    }
+
+
+
+    function validate(){
+    // Removes any whitespaces (spacebar, tabs, etc)
+    // .replace(/\s+/g, '')`
+    
+    let name = document.forms["myForm"]["fname"].value; // full name will include a space
+    let pass = document.forms["myForm"]["pw"].value // passwords can have space
+    let email = document.forms["myForm"]["email"].value.replace(/\s+/g, ''); // these two shouldnt have spaces
+    let phone = document.forms["myForm"]["phone"].value.replace(/\s+/g, '');
+    
+    let check1 = false;
+    let check2 = false;
+    let check3 = false;
+    let check4 = false;
+
+    if(name == ""){
+        errName.innerHTML = "Please enter a name"
+        errName.style.color = "red"
+        inName.style.border = "3px solid red"
+
+    } else {
+        errName.innerHTML = ""
+        errName.style.color = "black"
+        inName.style.border = "3px solid green"
+        check1 = true
+    }
+    
+
+    // Password Check
+    
+        if(pass = "" || !passCheck(pass) || !containsSpecialChars(pass)){
+            errPass.innerHTML = "Password must contain at least 1 lowercase letter, and a special character e.g. '!'"
+            errPass.style.color = "red"
+            inPass.style.border = "3px solid red"
+
+        } else {
+            errPass.innerHTML = ""
+            errPass.style.color = "black"
+            inPass.style.border = "3px solid green"
+            check2 = true
+        }
+
+    // Email Check
+
+        if(email == "" || !emailChecks(email)){
+            errMail.innerHTML = "Enter a valid email"
+            errMail.style.color = "red"
+            inMail.style.border = "3px solid red"
+
+        } else {
+            errMail.innerHTML = ""
+            errMail.style.color = "black"
+            inMail.style.border = "3px solid green"
+            
+            check3 = true
+        }
+
+    // Phone Check
+    console.log(phonecheck(phone) || phone < 10)
+        if(!phonecheck(phone)){
+            errPhone.innerHTML = "Enter a valid number"
+            errPhone.style.color = "red"
+            inPhone.style.border = "3px solid red"
+
+            
+        } else {
+            errPhone.innerHTML = ""
+            errPhone.style.color = "black"
+            inPhone.style.border = "3px solid green"
+
+            check4 = true
+        }
+
+        if(check1 == true && check2 == true && check3 == true && check4 == true){
+
+            return true
+        } else {
+            return false
+        }
+    }
+
+</script>
+</body>
+</html>

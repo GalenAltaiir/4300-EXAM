@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Part 1.1</title>
+</head>
+<body id = "body">
+    <p id = "para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid deleniti libero vel, veritatis hic molestias ullam nihil, repudiandae aliquam delectus natus? Dicta non quia porro sint nemo deserunt maxime pariatur!</p>
+
+    <button onclick = "part1()">Press me!</button>
+
+    <script>
+        const para = document.getElementById("para")
+
+        function part1(){
+            para.style.fontFamily = "Verdana"
+            para.style.fontSize = "2rem"
+            para.style.color = "white"
+
+            document.getElementById("body").style.backgroundColor = "black"
+        }
+
+
+    </script>
+</body>
+</html>

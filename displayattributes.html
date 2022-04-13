@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Objects</h2>
+
+<p>Display Person Features</p>
+
+<img src="images/john.png" style = "width: 200px">
+
+<p id="demo"></p>
+<script>
+	/* Your code goes here */
+
+	const person = {
+		id: "459",
+		name: "John",
+		surname: "Smith"
+	}
+
+	const elem = document.getElementById("demo")
+	
+	elem.innerHTML+= `
+	<p>Employee ID: `+person.id+`</p>
+	<p>Employee Name: `+person.name+`</p>
+	<p>Employee Surname: `+person.surname+`</p>
+	`
+</script>
+
+</body>
+</html>

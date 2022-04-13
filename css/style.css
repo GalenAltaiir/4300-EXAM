@@ -1,0 +1,92 @@
+@charset "UTF-8";
+/* CSS Document */
+
+
+body {
+	font-size:14px;
+}
+h4{
+     color:#435826;
+
+            text-align: center;
+        }
+    a{
+        color: black;
+    }
+
+#main{
+    margin:0 auto;
+    width: 780px;
+    height:500px;
+    background-color: #b9dd60;
+    padding: 20px;
+    /*border:1px solid red;*/
+    
+}
+
+    #product_picture{
+        width: 300px;
+        height:400px;
+        background-color: #81b449;
+        float:left;
+        /*border:1px solid green;*/
+        padding:20px;
+        margin:5px;
+        margin-right: 20px;
+        margin-left: 15px;
+    }
+
+                #main_image{
+                    background-color: lightpink;
+                    padding:5px;
+                    text-align: center;
+                }
+                 #main_image img{
+                   width:150px;
+                   height:200px;
+                   
+                }
+                
+                
+
+                #thumbs_image{
+                    background-color: lightslategray;
+                    padding:5px;
+                    text-align: center;
+                    
+                }
+                
+
+    #product_order_info{
+        width: 380px;
+        height:400px;
+        float: left;
+        background-color: #81b449;
+        /*border:1px solid red;*/
+        padding:20px;
+        margin:5px;
+        
+    }
+                #order_form{
+                    background-color: lightgoldenrodyellow;
+                    padding:15px;
+                    height: 165px;
+                    
+                }
+                
+                #order_info{
+                    background-color: lightpink;  
+                    padding:15px;
+                    
+                }
+
+    .jumbotron{
+            background-color: #e8ddea;
+            width:100%;
+            padding:20px;
+        }
+footer{
+            width:100%;
+            background-color: #c5ebfb;
+
+        }
